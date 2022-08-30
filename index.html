@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clicker</title>
+</head>
+<body id="main">
+    
+    <main>
+        <div id="settings" class = 'section'>
+            <h1>Settings</h1>
+            <div class="options"></div>
+            <footer>
+                <div class="close" onclick="misc().close('settings')">Close</div>
+            </footer>
+        </div>
+        <div id="upgrades" class = 'section'>
+            <h1>Upgrades</h1>
+            <div class="options">
+                <table>
+                    <tr class="itemRow">
+                        <td class="info">
+                            <table class="item">
+                                <tr>
+                                    <td colspan="3">2x PPC</td>
+                                </tr>
+                                <tr>
+                                    <td class="itemInfo" id="upgradePrice0">price</td>
+                                    <td class="itemInfo" id="upgradesBought0">x</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="buy" onclick="upgrades().buyMultiplyer(0)">Buy</td>
+                        <td class="informer"></td>
+                    </tr>
+                    <tr class="itemRow">
+                        <td class="info">
+                            <table class="item">
+                                <tr>
+                                    <td colspan="3">+1% Bonus</td>
+                                </tr>
+                                <tr>
+                                    <td class="itemInfo" id="upgradePrice1">price</td>
+                                    <td class="itemInfo" id="upgradesBought1">x</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="buy" onclick="upgrades().buyBonus(1)">Buy</td>
+                        <td class="informer"></td>
+                    </tr>
+                </table>
+            </div>
+            <footer>
+                <div class="close" onclick="misc().close('upgrades')">Close</div>
+            </footer>
+        </div>
+        <div class="section" id="sectionStats">
+            <h1 id="stats">Stats</h1>
+            <div class="counters" id="everyCookie"></div>
+            <h5>Every Point</h5>
+            <div class="counters" id="everyClick"></div>
+            <h5>Every Click</h5>
+            <div class="counters" id="perClick"></div>
+            <h5>Points Per Click</h5>
+            <div class="counters" id="prestiges"></div>
+            <h5>Prestiges</h5>
+            <div class="counters" id="bonus"></div>
+            <h5>Bonus %</h5>
+            <div id="buttons">
+                <div onclick="misc().restart()">
+                    <button class="button">P</button>
+                    <h5 class="buttonh5">Prestige</h5>
+                </div>
+                <div onclick="misc().open('settings')">
+                    <button class="button">S</button>
+                    <h5 class="buttonh5">Settings</h5>
+                </div>
+                <div onclick="misc().open('upgrades')">
+                    <button class="button">U</button>
+                    <h5 class="buttonh5">Upgrades</h5>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div id="pointCounter" class="counters"></div>
+            <h5>Points</h5>
+            <div id="clickerFrame">
+                <div id="clicker" onclick="clicker().addPoints()"><img src="theCreator.png" alt="click"></div>
+            </div>
+            <h1 style="margin-top: 10%;">&uArr;<br>Click</h1>
+        </div>
+        <div class="section">
+            <h1 id="shop">Shop</h1>
+            <table id="shopDisplay">
+                <tr class="itemRow" id="row1">
+                    <td id="info0" class="info">
+                        <table class="item" id="item0">
+                            <tr>
+                                <td colspan="3">Upgrade 0</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc0">ppc</td>
+                                <td class="itemInfo" id="itemPrice0">price</td>
+                                <td class="itemInfo" id="timesBought0">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy0" class="buy" onclick="shop().buyItem(0)">Buy</td>
+                    <td class="informer" id="itemInfoid0"></td>
+                </tr>
+                <tr class="itemRow" id="row2">
+                    <td id="info1" class="info">
+                        <table class="item" id="item1">
+                            <tr>
+                                <td colspan="3">Upgrade 1</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc1">ppc</td>
+                                <td class="itemInfo" id="itemPrice1">price</td>
+                                <td class="itemInfo" id="timesBought1">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy1" class="buy" onclick="shop().buyItem(1)">Buy</td>
+                    <td class="informer" id="itemInfoid1"></td>
+                </tr>
+                <tr class="itemRow" id="row3">
+                    <td id="info2" class="info">
+                        <table class="item" id="item2">
+                            <tr>
+                                <td colspan="3">Upgrade 2</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc2">ppc</td>
+                                <td class="itemInfo" id="itemPrice2">price</td>
+                                <td class="itemInfo" id="timesBought2">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy2" class="buy" onclick="shop().buyItem(2)">Buy</td>
+                    <td class="informer" id="itemInfoid2"></td>
+                </tr>
+                <tr class="itemRow" id="row4">
+                    <td id="info3" class="info">
+                        <table class="item" id="item3">
+                            <tr>
+                                <td colspan="3">Upgrade 3</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc3">ppc</td>
+                                <td class="itemInfo" id="itemPrice3">price</td>
+                                <td class="itemInfo" id="timesBought3">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy3" class="buy" onclick="shop().buyItem(3)">Buy</td>
+                    <td class="informer" id="itemInfoid3"></td>
+                </tr>
+                <tr class="itemRow" id="row5">
+                    <td id="info4" class="info">
+                        <table class="item" id="item4">
+                            <tr>
+                                <td colspan="3">Upgrade 4</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc4">ppc</td>
+                                <td class="itemInfo" id="itemPrice4">price</td>
+                                <td class="itemInfo" id="timesBought4">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy4" class="buy" onclick="shop().buyItem(4)">Buy</td>
+                    <td class="informer" id="itemInfoid4"></td>
+                </tr>
+                <tr class="itemRow" id="row6">
+                    <td id="info5" class="info">
+                        <table class="item" id="item5">
+                            <tr>
+                                <td colspan="3">Upgrade 5</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc5">ppc</td>
+                                <td class="itemInfo" id="itemPrice5">price</td>
+                                <td class="itemInfo" id="timesBought5">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy5" class="buy" onclick="shop().buyItem(5)">Buy</td>
+                    <td class="informer" id="itemInfoid5"></td>
+                </tr>
+                <tr class="itemRow" id="row7">
+                    <td id="info6" class="info">
+                        <table class="item" id="item6">
+                            <tr>
+                                <td colspan="3">Upgrade 6</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc6">ppc</td>
+                                <td class="itemInfo" id="itemPrice6">price</td>
+                                <td class="itemInfo" id="timesBought6">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy6" class="buy" onclick="shop().buyItem(6)">Buy</td>
+                    <td class="informer" id="itemInfoid6"></td>
+                </tr>
+                <tr class="itemRow" id="row8">
+                    <td id="info7" class="info">
+                        <table class="item" id="item7">
+                            <tr>
+                                <td colspan="3">Upgrade 7</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc7">ppc</td>
+                                <td class="itemInfo" id="itemPrice7">price</td>
+                                <td class="itemInfo" id="timesBought7">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy7" class="buy" onclick="shop().buyItem(7)">Buy</td>
+                    <td class="informer" id="itemInfoid7"></td>
+                </tr>
+                <tr class="itemRow" id="row9">
+                    <td id="info8" class="info">
+                        <table class="item" id="item8">
+                            <tr>
+                                <td colspan="3">Upgrade 8</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc8">ppc</td>
+                                <td class="itemInfo" id="itemPrice8">price</td>
+                                <td class="itemInfo" id="timesBought8">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy8" class="buy" onclick="shop().buyItem(8)">Buy</td>
+                    <td class="informer" id="itemInfoid8"></td>
+                </tr>
+                <tr class="itemRow" id="row10">
+                    <td id="info9" class="info">
+                        <table class="item" id="item9">
+                            <tr>
+                                <td colspan="3">Upgrade 9</td>
+                            </tr>
+                            <tr>
+                                <td class="itemInfo" id="ppc9">ppc</td>
+                                <td class="itemInfo" id="itemPrice9">price</td>
+                                <td class="itemInfo" id="timesBought9">x</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="buy9" class="buy" onclick="shop().buyItem(9)">Buy</td>
+                    <td class="informer" id="itemInfoid9"></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <script src="clicker.js"></script>
+</body>
+</html>
