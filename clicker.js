@@ -17,14 +17,15 @@ let itemValuer = [15, 100, 1100, 12000, 130000, 1400000, 20000000, 330000000, 51
 let itemPpc = [.1, 1, 8, 47, 260, 1400, 7800, 44000, 260000, 1600000];
 
     ///stats///
-let ascendMark = 100000;
+let ascendMark = 100000; //how much you have to earn to get a prestige point
 let points = 0;
 let everyClick = 0;
 let everyPoint = 0;
-let prestige = 1000;
+let prestige = 0;
 let popValue = 1;
 let bonusPercent = prestige;
 let valueNames = ['K', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'Dec'];
+let themeIsDark = true;
 
 let start = () => {
     stats().update();
@@ -192,6 +193,32 @@ function upgrades(){
             for(i =0; i < upgradesBought.length; i++){
                 document.getElementById(upgradePriceStat[i]).innerHTML = '$: '+stats().shortenValue(upgradeValue[i]);
                 document.getElementById(upgradesBoughtStat[i]).innerHTML = 'x'+stats().shortenValue(upgradesBought[i]);
+            }
+        }
+    }
+    return self;
+}
+
+function theme(){
+    const self = {
+        changeTheme: () => {
+            themeIsDark = !themeIsDark;
+            if(themeIsDark){
+                document.getElementById("usedTheme").style.color = "black";
+                document.getElementById("usedTheme").innerHTML = "Dark";
+                document.getElementById("themeSwitch").style.justifyContent = "flex-start";
+                document.getElementById("themeSwitch").style.backgroundColor = "white";
+                document.getElementById("themeColor").style.backgroundColor = "black";
+                document.getElementById("mmain").style.backgroundColor = "#252526";
+            }
+            else{
+                document.getElementById("usedTheme").style.color = "#A0A0A0";
+                document.getElementById("usedTheme").innerHTML = "Lite";
+                document.getElementById("themeSwitch").style.justifyContent = "flex-end";
+                document.getElementById("themeSwitch").style.backgroundColor = "black";
+                document.getElementById("themeColor").style.backgroundColor = "white";
+                document.getElementById("mmain").style.backgroundColor = "white";
+                document.getElementsByClassName("section").style.backgroundColor = "rgba(0, 0, 0, .4)";
             }
         }
     }

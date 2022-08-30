@@ -9,10 +9,17 @@
 </head>
 <body id="main">
     
-    <main>
+    <main id="mmain">
         <div id="settings" class = 'section'>
             <h1>Settings</h1>
-            <div class="options"></div>
+            <div class="options">
+                <div id="theme">
+                    <h4 id="usedTheme">Dark</h4>
+                    <div id="themeSwitch" onclick="theme().changeTheme()">
+                        <div id="themeColor"></div>
+                    </div>
+                </div>
+            </div>
             <footer>
                 <div class="close" onclick="misc().close('settings')">Close</div>
             </footer>

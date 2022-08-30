@@ -137,6 +137,34 @@ main{
     justify-content: space-evenly;
 }
 
+#theme{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#themeSwitch{
+    background-color: white;
+    width: 10vh;
+    height: 3vh;
+    padding: 1%;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    transition: 300ms;
+}
+
+
+
+#themeColor{
+    height: 100%;
+    width: 30%;
+    background-color: black;
+    border-radius: inherit;
+    transition: 500ms;
+}
+
 .buttonh5{
     margin-top: 5%;
 }
@@ -157,7 +185,7 @@ td{
 
 img{
     width: 35%;
-    display: none;
+    display: block;
 }
 
 button{
